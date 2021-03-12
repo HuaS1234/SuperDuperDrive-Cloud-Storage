@@ -4,11 +4,17 @@ import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.FileService;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 import java.util.List;
 
@@ -49,12 +55,20 @@ public class HomeController {
         return "home";
     }
 
-    @RequestMapping(value="/edit/{fileId}")
-    public String deleteFile(@PathVariable int fileId, Model model, Principal principal){
-        int userId = getUserId(principal);
+    @RequestMapping(value="/delete/{fileId}")
+    public String deleteFile(@PathVariable int fileId){
         fileService.deleteFile(fileId);
-        System.out.println(fileId + " ");
+
         return "redirect:/home";
     }
+
+    @GetMapping(value="/view/{fileId}")
+    public ResponseEntity<Resource> viewFile(@PathVariable int fileId, Authentication authentication) {
+        //fileService.deleteFile(fileId);
+
+        //return "redirect:/home";
+        return fileService.viewFile(fileId);
+    }
+
 
 }

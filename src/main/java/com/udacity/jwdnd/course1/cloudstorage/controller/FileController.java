@@ -4,18 +4,19 @@ import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.FileService;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.security.Principal;
 import java.util.List;
 
 @Controller
-@RequestMapping("/home/file-upload")
+@RequestMapping("/file")
 public class FileController {
 
     private final FileService fileService;
@@ -26,28 +27,28 @@ public class FileController {
         this.userService = userService;
     }
 
-    public int getUserId(Principal principal) {
-        String userName = principal.getName(); //get current username
-        User user = userService.getUser(userName);
-        return user.getUserId();
+    @GetMapping
+    public String homeView(Model model, Authentication authentication) {
+        int userId = userService.getUser(authentication.getName()).getUserId();
+        model.addAttribute("fileList", this.fileService.getAllFile(userId));
+        return "home";
     }
 
-    @PostMapping
-    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Model model, Principal principal) {
-        //InputStream fis = file.getInputStream();
-
-        int userId = getUserId(principal);
+    @PostMapping("/upload")
+    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Authentication authentication) {
+        int userId = userService.getUser(authentication.getName()).getUserId();
         fileService.upload(file, userId);
+        return "redirect:/file";
+    }
 
-        //list uploaded files:
-//        model.addAttribute("files", storageService.loadAll().map(
-//                path -> MvcUriComponentsBuilder.fromMethodName(FileUploadController.class,
-//                        "serveFile", path.getFileName().toString()).build().toUri().toString())
-//                .collect(Collectors.toList()));
+    @RequestMapping(value="/delete/{fileId}")
+    public String deleteFile(@PathVariable int fileId){
+        fileService.deleteFile(fileId);
+        return "redirect:/file";
+    }
 
-        //get all list
-        List<File> list = fileService.getAllFile(userId);
-
-        return "home";
+    @GetMapping(value="/view/{fileId}")
+    public ResponseEntity<Resource> viewFile(@PathVariable int fileId, Authentication authentication) {
+        return fileService.viewFile(fileId);
     }
 }
