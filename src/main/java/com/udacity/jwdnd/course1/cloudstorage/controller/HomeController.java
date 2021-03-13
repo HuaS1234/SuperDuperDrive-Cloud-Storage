@@ -30,45 +30,11 @@ public class HomeController {
         this.userService = userService;
     }
 
-    public int getUserId(Principal principal) {
-        String userName = principal.getName(); //get current username
-        User user = userService.getUser(userName);
-        return user.getUserId();
-    }
-
     @GetMapping
-    public String homeView(Model model, Principal principal) {
-        int userId = getUserId(principal);
+    public String homeView(Model model, Authentication authentication) {
+        int userId = userService.getUser(authentication.getName()).getUserId();
+        model.addAttribute("fileList", this.fileService.getAllFile(userId)); //display all files
 
-        model.addAttribute("fileList", this.fileService.getAllFile(userId));
         return "home";
     }
-
-//    @PostMapping
-//    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Model model, Principal principal) {
-//
-//        int userId = getUserId(principal);
-//        fileService.upload(file, userId);
-//
-//
-//        model.addAttribute("fileList", this.fileService.getAllFile(userId));
-//        return "home";
-//    }
-
-    @RequestMapping(value="/delete/{fileId}")
-    public String deleteFile(@PathVariable int fileId){
-        fileService.deleteFile(fileId);
-
-        return "redirect:/home";
-    }
-
-    @GetMapping(value="/view/{fileId}")
-    public ResponseEntity<Resource> viewFile(@PathVariable int fileId, Authentication authentication) {
-        //fileService.deleteFile(fileId);
-
-        //return "redirect:/home";
-        return fileService.viewFile(fileId);
-    }
-
-
 }

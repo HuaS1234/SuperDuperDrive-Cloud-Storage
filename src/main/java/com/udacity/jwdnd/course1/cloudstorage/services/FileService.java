@@ -67,21 +67,22 @@ public class FileService implements StorageService{
                 checkFile(userId, file.getOriginalFilename());
                 if (checkFile(userId, file.getOriginalFilename()) > 0) {
                     model.addAttribute("error", "The file has been uploaded already! ");
-                    model.addAttribute("linkAfterError", "file");
+                    model.addAttribute("linkAfterError", "home");
                     return "result";
                 } else {
                     fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes()));
                 }
             } else {
                 model.addAttribute("error", "Choose a file first! ");
-                model.addAttribute("linkAfterError", "file");
+                model.addAttribute("linkAfterError", "home");
                 return "result";
             }
-            return "redirect:/file";
+
+            return "redirect:/home";
         }
         catch (Exception e) {
             model.addAttribute("otherError", "error");
-            model.addAttribute("linkAfterOtherError", "file");
+            model.addAttribute("linkAfterOtherError", "home");
             return "result";
         }
     }

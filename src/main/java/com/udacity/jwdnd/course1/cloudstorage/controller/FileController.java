@@ -27,24 +27,24 @@ public class FileController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public String homeView(Model model, Authentication authentication) {
-        int userId = userService.getUser(authentication.getName()).getUserId();
-        model.addAttribute("fileList", this.fileService.getAllFile(userId));
-        return "home";
-    }
+//    @GetMapping
+//    public String homeView(Model model, Authentication authentication) {
+//        int userId = userService.getUser(authentication.getName()).getUserId();
+//        model.addAttribute("fileList", this.fileService.getAllFile(userId));
+//        //model.addAttribute("activeTab", "notes");
+//        return "home";
+//    }
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Authentication authentication, Model model) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         return fileService.upload(file, userId, model);
-        //return "redirect:/file";
     }
 
     @RequestMapping(value="/delete/{fileId}")
     public String deleteFile(@PathVariable int fileId){
         fileService.deleteFile(fileId);
-        return "redirect:/file";
+        return "redirect:/home";
     }
 
     @GetMapping(value="/view/{fileId}")
@@ -52,10 +52,4 @@ public class FileController {
         return fileService.viewFile(fileId);
     }
 
-//    @PostMapping("/error")
-//    public String getErrorMessage(@RequestParam("fileUpload") MultipartFile file, Authentication authentication, Model model) {
-//        int userId = userService.getUser(authentication.getName()).getUserId();
-//        fileService.upload(file, userId, model);
-//        return "result";
-//    }
 }

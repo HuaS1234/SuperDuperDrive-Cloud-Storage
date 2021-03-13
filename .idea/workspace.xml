@@ -6,17 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="3190c2b5-1884-48f0-85fe-1c66928809e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/FileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Note.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/StorageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/StorageService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/mapper/FileMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/FileService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/StorageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/StorageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,6 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
