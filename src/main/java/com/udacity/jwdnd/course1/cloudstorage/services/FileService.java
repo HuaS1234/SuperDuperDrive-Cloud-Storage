@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -17,6 +18,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 @Service
 public class FileService implements StorageService{
@@ -38,6 +40,11 @@ public class FileService implements StorageService{
     }
 
     @Override
+    public int checkFile(int userId, String fileName) {
+        return fileMapper.checkFile(userId, fileName);
+    }
+
+    @Override
     public ResponseEntity<Resource> viewFile(int fileId) {
         File file = fileMapper.getFile(fileId);
         ResponseEntity respEntity = null;
@@ -54,15 +61,28 @@ public class FileService implements StorageService{
     }
 
     @Override
-    public void upload(MultipartFile file, int userId) {
+    public String upload(MultipartFile file, int userId, Model model) {
         try {
             if (!file.isEmpty()) {
-
-                fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes()));
+                checkFile(userId, file.getOriginalFilename());
+                if (checkFile(userId, file.getOriginalFilename()) > 0) {
+                    model.addAttribute("error", "The file has been uploaded already! ");
+                    model.addAttribute("linkAfterError", "file");
+                    return "result";
+                } else {
+                    fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes()));
+                }
+            } else {
+                model.addAttribute("error", "Choose a file first! ");
+                model.addAttribute("linkAfterError", "file");
+                return "result";
             }
+            return "redirect:/file";
         }
         catch (Exception e) {
-
+            model.addAttribute("otherError", "error");
+            model.addAttribute("linkAfterOtherError", "file");
+            return "result";
         }
     }
 }

@@ -35,10 +35,10 @@ public class FileController {
     }
 
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Authentication authentication) {
+    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Authentication authentication, Model model) {
         int userId = userService.getUser(authentication.getName()).getUserId();
-        fileService.upload(file, userId);
-        return "redirect:/file";
+        return fileService.upload(file, userId, model);
+        //return "redirect:/file";
     }
 
     @RequestMapping(value="/delete/{fileId}")
@@ -51,4 +51,11 @@ public class FileController {
     public ResponseEntity<Resource> viewFile(@PathVariable int fileId, Authentication authentication) {
         return fileService.viewFile(fileId);
     }
+
+//    @PostMapping("/error")
+//    public String getErrorMessage(@RequestParam("fileUpload") MultipartFile file, Authentication authentication, Model model) {
+//        int userId = userService.getUser(authentication.getName()).getUserId();
+//        fileService.upload(file, userId, model);
+//        return "result";
+//    }
 }

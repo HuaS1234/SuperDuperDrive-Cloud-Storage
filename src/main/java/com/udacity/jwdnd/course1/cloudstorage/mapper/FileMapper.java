@@ -5,6 +5,7 @@ import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Mapper
 public interface FileMapper {
@@ -18,6 +19,9 @@ public interface FileMapper {
 
     @Select("SELECT * FROM FILES WHERE userid = #{userid}")
     List<File> getAllFile(int userid);
+
+    @Select("SELECT COUNT(*) FROM FILES WHERE userid = #{userid} AND filename = #{filename}")
+    int checkFile(int userid, String filename);
 
     @Select("SELECT * FROM FILES WHERE fileId = #{fileId}")
     File getFile(int fileId);

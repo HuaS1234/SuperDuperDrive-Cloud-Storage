@@ -44,16 +44,16 @@ public class HomeController {
         return "home";
     }
 
-    @PostMapping
-    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Model model, Principal principal) {
-
-        int userId = getUserId(principal);
-        fileService.upload(file, userId);
-
-
-        model.addAttribute("fileList", this.fileService.getAllFile(userId));
-        return "home";
-    }
+//    @PostMapping
+//    public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Model model, Principal principal) {
+//
+//        int userId = getUserId(principal);
+//        fileService.upload(file, userId);
+//
+//
+//        model.addAttribute("fileList", this.fileService.getAllFile(userId));
+//        return "home";
+//    }
 
     @RequestMapping(value="/delete/{fileId}")
     public String deleteFile(@PathVariable int fileId){
