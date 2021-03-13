@@ -1,6 +1,7 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
+import com.udacity.jwdnd.course1.cloudstorage.model.NoteForm;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.FileService;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
@@ -31,7 +32,7 @@ public class HomeController {
     }
 
     @GetMapping
-    public String homeView(Model model, Authentication authentication, @ModelAttribute(value="tabOption") String tabOption) {
+    public String homeView(Model model, Authentication authentication, @ModelAttribute(value="tabOption") String tabOption, NoteForm noteForm) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         model.addAttribute("fileList", this.fileService.getAllFile(userId)); //display all files
         model.addAttribute("activeTab", tabOption);
