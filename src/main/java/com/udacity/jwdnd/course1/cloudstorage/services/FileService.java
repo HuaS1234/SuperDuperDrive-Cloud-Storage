@@ -62,27 +62,28 @@ public class FileService implements StorageService{
 
     @Override
     public String upload(MultipartFile file, int userId, Model model) {
+
         try {
             if (!file.isEmpty()) {
                 checkFile(userId, file.getOriginalFilename());
                 if (checkFile(userId, file.getOriginalFilename()) > 0) {
                     model.addAttribute("error", "The file has been uploaded already! ");
-                    model.addAttribute("linkAfterError", "home");
+                    model.addAttribute("tabAfterError", "files");
                     return "result";
                 } else {
                     fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes()));
                 }
             } else {
                 model.addAttribute("error", "Choose a file first! ");
-                model.addAttribute("linkAfterError", "home");
+                model.addAttribute("tabAfterError", "files");
                 return "result";
             }
 
-            return "redirect:/home";
+            return "redirect:/home?tabOption=files";
         }
         catch (Exception e) {
             model.addAttribute("otherError", "error");
-            model.addAttribute("linkAfterOtherError", "home");
+            model.addAttribute("tabAfterOtherError", "files");
             return "result";
         }
     }

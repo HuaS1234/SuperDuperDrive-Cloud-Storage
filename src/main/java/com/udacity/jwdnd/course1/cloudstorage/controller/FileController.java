@@ -44,7 +44,7 @@ public class FileController {
     @RequestMapping(value="/delete/{fileId}")
     public String deleteFile(@PathVariable int fileId){
         fileService.deleteFile(fileId);
-        return "redirect:/home";
+        return "redirect:/home?tabOption=files";
     }
 
     @GetMapping(value="/view/{fileId}")

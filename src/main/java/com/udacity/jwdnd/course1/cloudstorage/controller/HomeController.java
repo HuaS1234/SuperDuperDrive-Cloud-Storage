@@ -31,10 +31,10 @@ public class HomeController {
     }
 
     @GetMapping
-    public String homeView(Model model, Authentication authentication) {
+    public String homeView(Model model, Authentication authentication, @ModelAttribute(value="tabOption") String tabOption) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         model.addAttribute("fileList", this.fileService.getAllFile(userId)); //display all files
-
+        model.addAttribute("activeTab", tabOption);
         return "home";
     }
 }
