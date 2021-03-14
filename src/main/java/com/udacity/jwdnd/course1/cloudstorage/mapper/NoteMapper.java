@@ -22,4 +22,7 @@ public interface NoteMapper {
 
     @Update("UPDATE NOTES SET notetitle = #{noteTitle}, notedescription = #{noteDescription} WHERE noteid = #{noteId}")
     int updateNote(int noteId, String noteTitle, String noteDescription);
+
+    @Select("SELECT COUNT(*) FROM NOTES WHERE userid = #{userid} AND notetitle = #{noteTitle}")
+    int checkNote(int userid, String noteTitle);
 }

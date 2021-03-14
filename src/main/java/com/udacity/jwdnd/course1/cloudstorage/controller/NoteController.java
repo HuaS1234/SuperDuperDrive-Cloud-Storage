@@ -29,8 +29,7 @@ public class NoteController {
     public String addNote(NoteForm noteForm, Authentication authentication, Model model, @ModelAttribute(value="noteId") String noteId) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         if (noteId.equals("")) {
-            return noteService.addNote(noteForm, userId);
-
+            return noteService.addNote(noteForm, userId, model);
         } else {
             return noteService.updateNode(noteForm, Integer.valueOf(noteId));
         }

@@ -65,7 +65,7 @@ public class FileService implements StorageService{
 
         try {
             if (!file.isEmpty()) {
-                checkFile(userId, file.getOriginalFilename());
+                //checkFile(userId, file.getOriginalFilename());
                 if (checkFile(userId, file.getOriginalFilename()) > 0) {
                     model.addAttribute("error", "The file has been uploaded already! ");
                     model.addAttribute("tabAfterError", "files");

@@ -8,10 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/NoteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/NoteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/CredentialMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/model/Credential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/FileService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/NoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/NoteService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/FileService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/udacity/jwdnd/course1/cloudstorage/services/FileService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,25 +118,95 @@
           <line>11</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/NoteService.java</url>
-          <line>30</line>
+          <line>32</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/NoteService.java</url>
-          <line>31</line>
+          <line>33</line>
           <option name="timeStamp" value="32" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/NoteController.java</url>
-          <line>34</line>
+          <line>33</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/NoteController.java</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/CredentialController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/HomeController.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java</url>
@@ -146,6 +221,14 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java</url>
+          <line>37</line>
+          <properties class="com.udacity.jwdnd.course1.cloudstorage.services.CredentialService" method="getAllCredential">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
