@@ -48,8 +48,8 @@
                                         <th style="width: 80%" scope="col">File Name</th>
                                     </tr>
                                 </thead>
-                                <tbody th:each="eachFile : ${fileList}">
-                                <tr>
+                                <tbody>
+                                <tr th:each="eachFile : ${fileList}">
                                     <td>
                                         <a name="editButton" value="view" th:href="@{'/file/view/{fileId}'(fileId=${eachFile.fileId})}" target="_blank" class="btn btn-success">View</a>
                                         <a name="editButton" value="delete" th:href="@{'/file/delete/{fileId}'(fileId=${eachFile.fileId})}" class="btn btn-danger" >Delete</a>
@@ -75,13 +75,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr th:each="eachNote : ${noteList}">
                                         <td>
-                                            <button type="button" class="btn btn-success">Edit</button>
-                                            <a class="btn btn-danger">Delete</a>
+                                            <button th:onclick="javascript: showNoteModal([[${eachNote.noteid}]],[[${eachNote.notetitle}]],[[${eachNote.notedescription}]])" type="button" class="btn btn-success">Edit</button>
+                                            <a th:href="@{'/note/delete/{noteId}'(noteId=${eachNote.noteid})}" class="btn btn-danger">Delete</a>
                                         </td>
-                                        <th scope="row">Example Note Title</th>
-                                        <td>Example Note Description </td>
+                                        <th scope="row" th:text="${eachNote.notetitle}">Example Note Title</th>
+                                        <td th:text="${eachNote.notedescription}">Example Note Description </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -97,7 +97,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form th:object="${noteForm}" action="#" th:action="@{/note/add}" method="POST">
+                                        <form th:object="${noteForm}" action="#" th:action="@{/note/edit}" method="POST">
                                             <input type="hidden" name="noteId" id="note-id">
                                             <div class="form-group">
                                                 <label for="note-title" class="col-form-label">Title</label>
