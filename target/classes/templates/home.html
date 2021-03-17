@@ -119,7 +119,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" th:classappend="${#strings.equals(activeTab, 'credentials') ? 'show active' : ''}" id="nav-credentials" role="tabpanel" aria-labelledby="nav-credentials-tab">
-                        <button style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showCredentialModal()">
+                        <button id="newCredentialButton" style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showCredentialModal()">
                             + Add a New Credential
                         </button>
                         <div class="table-responsive">
@@ -135,12 +135,12 @@
                                 <tbody>
                                 <tr th:each="eachCredential : ${credentialList}">
                                     <td>
-                                        <button th:onclick="javascript: showCredentialModal([[${eachCredential.credentialid}]],[[${eachCredential.url}]],[[${eachCredential.username}]],[[${encryptionService.decryptValue(eachCredential.password, eachCredential.key)}]])" type="button" class="btn btn-success">Edit</button>
-                                        <a th:href="@{'/credential/delete/{credentialId}'(credentialId=${eachCredential.credentialid})}" class="btn btn-danger">Delete</a>
+                                        <button id="credentialEditButton" th:onclick="javascript: showCredentialModal([[${eachCredential.credentialid}]],[[${eachCredential.url}]],[[${eachCredential.username}]],[[${encryptionService.decryptValue(eachCredential.password, eachCredential.key)}]])" type="button" class="btn btn-success">Edit</button>
+                                        <a id="credentialDeleteButton" th:href="@{'/credential/delete/{credentialId}'(credentialId=${eachCredential.credentialid})}" class="btn btn-danger">Delete</a>
                                     </td>
-                                    <th scope="row" th:text="${eachCredential.url}">Example Credential URL</th>
-                                    <td th:text="${eachCredential.username}">Example Credential Username</td>
-                                    <td th:text="${eachCredential.password}">Example Credential Password</td>
+                                    <th id="eachCredentialUrl" scope="row" th:text="${eachCredential.url}">Example Credential URL</th>
+                                    <td id="eachCredentialUsername" th:text="${eachCredential.username}">Example Credential Username</td>
+                                    <td id="eachCredentialPassword" th:text="${eachCredential.password}">Example Credential Password</td>
                                 </tr>
                                 </tbody>
                             </table>

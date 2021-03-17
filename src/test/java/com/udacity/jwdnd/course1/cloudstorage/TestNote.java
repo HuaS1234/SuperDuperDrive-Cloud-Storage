@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
+import java.security.SecureRandom;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class TestNote {
     @LocalServerPort
@@ -40,8 +42,10 @@ public class TestNote {
         notePage = new NotePage(driver);
 
         //signup and login
-        String username = "newuser";
-        String password = "password";
+        SecureRandom random = new SecureRandom();
+
+        String username = String.valueOf(random.nextInt(1000));
+        String password = String.valueOf(random.nextInt(1000));
         driver.get(baseURL + "/signup");
         signupPage.signup("firstName", "lastName", username, password);
         driver.get(baseURL + "/login");
@@ -60,7 +64,7 @@ public class TestNote {
 
     //Write a test that creates a note, and verifies it is displayed.
     @Test
-    public void testUnauthorizedUser() {
+    public void testNewNote() {
         //create a new note
         String title = "title - test";
         String description = "description - test";
