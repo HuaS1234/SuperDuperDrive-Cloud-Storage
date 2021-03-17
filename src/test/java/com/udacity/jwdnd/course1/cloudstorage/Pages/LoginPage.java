@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,15 +22,19 @@ public class LoginPage {
     @FindBy(id = "logout-msg")
     private WebElement logoutMsg;
 
+    private final WebDriver webDriver;
     public LoginPage(WebDriver webDriver) {
+        this.webDriver = webDriver;
         PageFactory.initElements(webDriver, this);
     }
 
     public void login(String username, String password) {
-        this.usernameField.sendKeys(username);
-        this.passwordField.sendKeys(password);
-        this.submitButton.click();
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].value='" +username + "';", usernameField);
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].value='" +password + "';", passwordField);
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].click()", submitButton);
     }
+
+
 
     public boolean isNotAuthorized() {
         return this.errorMsg.isDisplayed();

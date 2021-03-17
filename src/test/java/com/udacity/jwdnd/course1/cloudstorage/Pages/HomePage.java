@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.Pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,7 +11,7 @@ public class HomePage {
     @FindBy(id="logoutButton")
     private WebElement logout;
 
-    private WebDriver webDriver;
+    private final WebDriver webDriver;
 
     public HomePage(WebDriver webDriver) {
         this.webDriver = webDriver;
@@ -18,7 +19,6 @@ public class HomePage {
     }
 
     public void logout() {
-        this.logout.click();
-        System.out.println("hey");
+        ((JavascriptExecutor) webDriver).executeScript("arguments[0].click()", logout);
     }
 }

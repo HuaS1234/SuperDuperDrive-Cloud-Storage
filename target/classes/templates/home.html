@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" th:classappend="${#strings.equals(activeTab, 'notes') ? 'show active' : ''}" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
-                        <button style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showNoteModal()">
+                        <button id="newNoteButton" style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showNoteModal()">
                             + Add a New Note
                         </button>
 
@@ -77,11 +77,11 @@
                                 <tbody>
                                     <tr th:each="eachNote : ${noteList}">
                                         <td>
-                                            <button th:onclick="javascript: showNoteModal([[${eachNote.noteid}]],[[${eachNote.notetitle}]],[[${eachNote.notedescription}]])" type="button" class="btn btn-success">Edit</button>
-                                            <a th:href="@{'/note/delete/{noteId}'(noteId=${eachNote.noteid})}" class="btn btn-danger">Delete</a>
+                                            <button id="noteEditButton" th:onclick="javascript: showNoteModal([[${eachNote.noteid}]],[[${eachNote.notetitle}]],[[${eachNote.notedescription}]])" type="button" class="btn btn-success">Edit</button>
+                                            <a id="noteDeleteButton" th:href="@{'/note/delete/{noteId}'(noteId=${eachNote.noteid})}" class="btn btn-danger">Delete</a>
                                         </td>
-                                        <th scope="row" th:text="${eachNote.notetitle}">Example Note Title</th>
-                                        <td th:text="${eachNote.notedescription}">Example Note Description </td>
+                                        <th id="eachNoteTitle" scope="row" th:text="${eachNote.notetitle}">Example Note Title</th>
+                                        <td id="eachNoteDesc" th:text="${eachNote.notedescription}">Example Note Description </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary" onclick="$('#noteSubmit').click();">Save changes</button>
+                                        <button id="saveChangesButton" type="button" class="btn btn-primary" onclick="$('#noteSubmit').click();">Save changes</button>
                                     </div>
                                 </div>
                             </div>

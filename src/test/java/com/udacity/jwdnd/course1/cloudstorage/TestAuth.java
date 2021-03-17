@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CloudStorageApplicationTests {
+class TestAuth {
 
 	@LocalServerPort
 	private int port;
@@ -37,13 +37,13 @@ class CloudStorageApplicationTests {
 	public void afterEach() {
 		if (this.driver != null) {
 
-			//driver.quit();
+			driver.quit();
 		}
 	}
 
 	//1. Write a test that verifies that an unauthorized user can only access the login and signup pages.
 	@Test
-	public void testUserSignupLoginAndSubmitMessage() {
+	public void testUnauthorizedUser() {
 		driver.get(baseURL + "/login");
 
 		//check if unauthorized user stay at login page
@@ -58,7 +58,7 @@ class CloudStorageApplicationTests {
 	//2. Write a test that signs up a new user, logs in, verifies that the home page is accessible,
 	// logs out, and verifies that the home page is no longer accessible.
 	@Test
-	public void getLoginPage() {
+	public void testSignupLoginLogout() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		String username = "newuser";
 		String password = "password";
@@ -72,14 +72,12 @@ class CloudStorageApplicationTests {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.login(username, password);
 		Assertions.assertEquals("Home", driver.getTitle());
-		//
 
 		//logout
 		HomePage homePage = new HomePage(driver);
 		homePage.logout();
 		wait.until(ExpectedConditions.titleContains("Login"));
 		Assertions.assertTrue(loginPage.loggedout());
-
 	}
 
 }

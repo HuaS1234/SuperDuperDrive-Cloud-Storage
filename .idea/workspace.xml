@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3190c2b5-1884-48f0-85fe-1c66928809e8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/SignupPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/Pages/HomePage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/Pages/LoginPage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/Pages/SignupPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/SignupPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/SignupPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.class" afterDir="false" />
     </list>
@@ -51,62 +46,80 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.CloudStorageApplicationTests.testUserSignupLoginAndSubmitMessage">
-    <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
+  <component name="RunManager" selected="JUnit.TestAuth">
+    <configuration name="TestAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pj1-SuperDuperDrive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.Pages.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CloudStorageApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pj1-SuperDuperDrive" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.Pages.*" />
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestAuth" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloudStorageApplicationTests.getLoginPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pj1-SuperDuperDrive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.Pages.*" />
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
-      <option name="METHOD_NAME" value="getLoginPage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestNote" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNote.testDeleteNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pj1-SuperDuperDrive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestNote" />
+      <option name="METHOD_NAME" value="testDeleteNote" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CloudStorageApplicationTests.testUserSignupLoginAndSubmitMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestNote.testEditNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pj1-SuperDuperDrive" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.Pages.*" />
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" />
-      <option name="METHOD_NAME" value="testUserSignupLoginAndSubmitMessage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestNote" />
+      <option name="METHOD_NAME" value="testEditNote" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestNote.testUnauthorizedUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pj1-SuperDuperDrive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestNote" />
+      <option name="METHOD_NAME" value="testUnauthorizedUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,10 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CloudStorageApplicationTests.testUserSignupLoginAndSubmitMessage" />
-        <item itemvalue="JUnit.CloudStorageApplicationTests.getLoginPage" />
-        <item itemvalue="JUnit.CloudStorageApplicationTests" />
-        <item itemvalue="Application.CloudStorageApplication" />
+        <item itemvalue="JUnit.TestAuth" />
+        <item itemvalue="JUnit.TestNote.testDeleteNote" />
+        <item itemvalue="JUnit.TestNote.testEditNote" />
+        <item itemvalue="JUnit.TestNote" />
+        <item itemvalue="JUnit.TestNote.testUnauthorizedUser" />
       </list>
     </recent_temporary>
   </component>
@@ -258,21 +272,6 @@
           <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/HomePage.java</url>
           <line>20</line>
           <option name="timeStamp" value="57" />
@@ -300,12 +299,12 @@
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/CloudStorageApplicationTests.java</url>
-          <line>45</line>
-          <properties class="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplicationTests" method="testUserSignupLoginAndSubmitMessage">
+          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java</url>
+          <line>75</line>
+          <properties class="com.udacity.jwdnd.course1.cloudstorage.TestNote" method="testEditNote">
             <option name="EMULATED" value="true" />
           </properties>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/HomePage.java</url>
