@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3190c2b5-1884-48f0-85fe-1c66928809e8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/CredentialPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/CredentialPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/Pages/CredentialPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/Pages/CredentialPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestNote.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +42,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="JUnit.TestCredential">
+  <component name="RunManager" selected="Application.CloudStorageApplication">
     <configuration name="CloudStorageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication" />
       <module name="Pj1-SuperDuperDrive" />
@@ -123,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CloudStorageApplication" />
         <item itemvalue="JUnit.TestCredential" />
         <item itemvalue="JUnit.TestAuth" />
         <item itemvalue="JUnit.TestNote" />
         <item itemvalue="JUnit.TestCredential.testDeleteCredential" />
-        <item itemvalue="Application.CloudStorageApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +287,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java</url>
-          <line>75</line>
+          <line>79</line>
           <properties class="com.udacity.jwdnd.course1.cloudstorage.TestNote" method="testEditNote">
             <option name="EMULATED" value="true" />
           </properties>
