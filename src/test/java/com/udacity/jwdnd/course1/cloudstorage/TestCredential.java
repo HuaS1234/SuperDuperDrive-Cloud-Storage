@@ -75,6 +75,7 @@ public class TestCredential {
         credentialPage.EditCredential(url, username, password);
 
         //verify it's displayed
+        driver.get(baseURL + "/home?tabOption=credentials");
         Assertions.assertEquals(url, credentialPage.getUrl());
         Assertions.assertEquals(username, credentialPage.getUsername());
         Assertions.assertNotEquals(password, credentialPage.getPassword());
@@ -92,6 +93,7 @@ public class TestCredential {
         credentialPage.EditCredential(url, username, password);
 
         //view existing credential, and verify password is unencrypted
+        driver.get(baseURL + "/home?tabOption=credentials");
         credentialPage.viewCredential();
         Assertions.assertEquals(password, credentialPage.getOriginalPassword());
 
@@ -101,6 +103,7 @@ public class TestCredential {
         credentialPage.EditCredential(url, username, password);
 
         //verify changes are displayed
+        driver.get(baseURL + "/home?tabOption=credentials");
         Assertions.assertEquals(username, credentialPage.getUsername());
         Assertions.assertNotEquals(password, credentialPage.getPassword());
 
@@ -117,9 +120,11 @@ public class TestCredential {
         credentialPage.EditCredential(url, username, password);
 
         //delete an existing credential
+        driver.get(baseURL + "/home?tabOption=credentials");
         credentialPage.deleteCredential();
 
         //verify it's no longer displayed
+        driver.get(baseURL + "/home?tabOption=credentials");
         Assertions.assertThrows(NoSuchElementException.class, () -> {
             credentialPage.getUrl();
         });

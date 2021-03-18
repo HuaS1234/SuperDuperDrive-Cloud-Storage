@@ -78,6 +78,10 @@ class TestAuth {
 		homePage.logout();
 		wait.until(ExpectedConditions.titleContains("Login"));
 		Assertions.assertTrue(loginPage.loggedout());
+
+		//home page is no longer accessible
+		driver.get(baseURL + "/home");
+		Assertions.assertNotEquals("Home", driver.getTitle());
 	}
 
 }

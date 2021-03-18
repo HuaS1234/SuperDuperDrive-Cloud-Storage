@@ -71,6 +71,7 @@ public class TestNote {
         notePage.CreateNote(title, description);
 
         //verify it's displayed
+        driver.get(baseURL + "/home?tabOption=notes");
         Assertions.assertEquals(title, notePage.getTitle());
         Assertions.assertEquals(description, notePage.getDescription());
     }
@@ -84,11 +85,13 @@ public class TestNote {
         notePage.CreateNote(title, description);
 
         //edit existing note
+        driver.get(baseURL + "/home?tabOption=notes");
         title = "newTitle";
         description = "newDescription";
         notePage.EditNote(title, description);
 
         //verify it's displayed
+        driver.get(baseURL + "/home?tabOption=notes");
         Assertions.assertEquals(title, notePage.getTitle());
         Assertions.assertEquals(description, notePage.getDescription());
 
@@ -103,9 +106,11 @@ public class TestNote {
         notePage.CreateNote(title, description);
 
         //delete existing note
+        driver.get(baseURL + "/home?tabOption=notes");
         notePage.DeleteNote();
 
         //verify it's no longer displayed
+        driver.get(baseURL + "/home?tabOption=notes");
         Assertions.assertThrows(NoSuchElementException.class, () -> {
             notePage.getTitle();
         });

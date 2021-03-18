@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3190c2b5-1884-48f0-85fe-1c66928809e8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/CredentialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/CredentialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/services/CredentialService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/controller/SignupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestCredential.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestCredential.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/udacity/jwdnd/course1/cloudstorage/TestNote.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,21 +60,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Pj1-SuperDuperDrive" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
-      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestAuth" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestCredential" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pj1-SuperDuperDrive" />
       <extension name="coverage">
@@ -85,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCredential.testDeleteCredential" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCredential.testEditCredential" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Pj1-SuperDuperDrive" />
       <extension name="coverage">
         <pattern>
@@ -95,7 +85,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
       <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestCredential" />
-      <option name="METHOD_NAME" value="testDeleteCredential" />
+      <option name="METHOD_NAME" value="testEditCredential" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,13 +106,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestNote.testNewNote" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pj1-SuperDuperDrive" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.udacity.jwdnd.course1.cloudstorage.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.udacity.jwdnd.course1.cloudstorage" />
+      <option name="MAIN_CLASS_NAME" value="com.udacity.jwdnd.course1.cloudstorage.TestNote" />
+      <option name="METHOD_NAME" value="testNewNote" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.CloudStorageApplication" />
         <item itemvalue="JUnit.TestCredential" />
-        <item itemvalue="JUnit.TestAuth" />
         <item itemvalue="JUnit.TestNote" />
-        <item itemvalue="JUnit.TestCredential.testDeleteCredential" />
+        <item itemvalue="JUnit.TestNote.testNewNote" />
+        <item itemvalue="JUnit.TestCredential.testEditCredential" />
       </list>
     </recent_temporary>
   </component>
@@ -217,6 +223,26 @@
           <line>44</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/NotePage.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/NotePage.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/NotePage.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/Pages/NotePage.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
         <line-breakpoint type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/udacity/jwdnd/course1/cloudstorage/mapper/NoteMapper.java</url>
           <line>14</line>
@@ -233,7 +259,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestNote.java</url>
-          <line>79</line>
+          <line>80</line>
           <properties class="com.udacity.jwdnd.course1.cloudstorage.TestNote" method="testEditNote">
             <option name="EMULATED" value="true" />
           </properties>
@@ -241,7 +267,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/udacity/jwdnd/course1/cloudstorage/TestCredential.java</url>
-          <line>110</line>
+          <line>113</line>
           <properties class="com.udacity.jwdnd.course1.cloudstorage.TestCredential" method="testDeleteCredential">
             <option name="EMULATED" value="true" />
           </properties>
