@@ -42,9 +42,15 @@ public class FileController {
     }
 
     @RequestMapping(value="/delete/{fileId}")
-    public String deleteFile(@PathVariable int fileId){
-        fileService.deleteFile(fileId);
-        return "redirect:/home?tabOption=files";
+    public String deleteFile(@PathVariable int fileId, Model model){
+        if (fileService.deleteFile(fileId) == 1) {
+            model.addAttribute("success", true);
+            model.addAttribute("tabAfterSuccess", "files");
+        }else {
+            model.addAttribute("otherError", true);
+            model.addAttribute("tabAfterOtherError", "files");
+        }
+        return "result";
     }
 
     @GetMapping(value="/view/{fileId}")

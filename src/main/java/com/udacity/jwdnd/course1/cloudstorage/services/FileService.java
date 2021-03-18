@@ -2,23 +2,15 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 
 import com.udacity.jwdnd.course1.cloudstorage.mapper.FileMapper;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
-import java.awt.*;
-import java.io.*;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
 
 @Service
 public class FileService implements StorageService{
@@ -30,8 +22,8 @@ public class FileService implements StorageService{
     }
 
     @Override
-    public void deleteFile(int fileId) {
-        fileMapper.deleteFile(fileId);
+    public int deleteFile(int fileId) {
+        return fileMapper.deleteFile(fileId);
     }
 
     @Override
@@ -69,17 +61,21 @@ public class FileService implements StorageService{
                 if (checkFile(userId, file.getOriginalFilename()) > 0) {
                     model.addAttribute("error", "The file has been uploaded already! ");
                     model.addAttribute("tabAfterError", "files");
-                    return "result";
                 } else {
-                    fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes()));
+                    if (fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes())) == 1) {
+                        model.addAttribute("success", true);
+                        model.addAttribute("tabAfterSuccess", "files");
+                    } else {
+                        model.addAttribute("otherError", true);
+                        model.addAttribute("tabAfterOtherError", "files");
+                    }
                 }
             } else {
                 model.addAttribute("error", "Choose a file first! ");
                 model.addAttribute("tabAfterError", "files");
-                return "result";
             }
 
-            return "redirect:/home?tabOption=files";
+            return "result";
         }
         catch (Exception e) {
             model.addAttribute("otherError", "error");

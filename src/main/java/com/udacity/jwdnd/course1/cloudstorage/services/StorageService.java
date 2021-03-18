@@ -7,10 +7,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Set;
 
 public interface StorageService {
-    void deleteFile(int fileId);
+    int deleteFile(int fileId);
     List<File> getAllFile(int userId);
     int checkFile(int userId, String fileName);
     ResponseEntity<Resource> viewFile(int fileId);
