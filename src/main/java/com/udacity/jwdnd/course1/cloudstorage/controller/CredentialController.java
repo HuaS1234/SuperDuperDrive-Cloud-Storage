@@ -30,15 +30,34 @@ public class CredentialController {
     public String addCredential(CredentialForm credentialForm, Authentication authentication, Model model, @ModelAttribute(value="credentialId") String credentialId) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         if (credentialId.equals("")) {
-            return credentialService.addCredential(credentialForm, userId, model);
+            if (credentialService.addCredential(credentialForm, userId, model) == 1) {
+                model.addAttribute("success", true);
+                model.addAttribute("tabAfterSuccess", "credentials");
+            } else {
+                model.addAttribute("otherError", true);
+                model.addAttribute("tabAfterOtherError", "credentials");
+            }
         } else {
-            return credentialService.updateCredential(credentialForm, Integer.valueOf(credentialId));
+            if (credentialService.updateCredential(credentialForm, Integer.valueOf(credentialId)) == 1) {
+                model.addAttribute("success", true);
+                model.addAttribute("tabAfterSuccess", "credentials");
+            } else {
+                model.addAttribute("otherError", true);
+                model.addAttribute("tabAfterOtherError", "credentials");
+            }
         }
+        return "result";
     }
 
     @RequestMapping(value="/delete/{credentialId}")
-    public String deleteCredential(@PathVariable int credentialId){
-        credentialService.deleteCredential(credentialId);
-        return "redirect:/home?tabOption=credentials";
+    public String deleteCredential(@PathVariable int credentialId, Model model){
+        if (credentialService.deleteCredential(credentialId) == 1) {
+            model.addAttribute("success", true);
+            model.addAttribute("tabAfterSuccess", "credentials");
+        } else {
+            model.addAttribute("otherError", true);
+            model.addAttribute("tabAfterOtherError", "credentials");
+        }
+        return "result";
     }
 }

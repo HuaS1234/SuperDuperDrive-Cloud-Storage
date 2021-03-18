@@ -24,30 +24,28 @@ public class CredentialService {
         this.encryptionService = encryptionService;
     }
 
-    public String addCredential(CredentialForm credentialForm, int userId, Model model) {
+    public int addCredential(CredentialForm credentialForm, int userId, Model model) {
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
         random.nextBytes(salt);
         String key = Base64.getEncoder().encodeToString(salt);
         String encrypedPassword = encryptionService.encryptValue(credentialForm.getPassword(), key);
 
-        credentialMapper.addCredential(new Credential(null, credentialForm.getUrl(), credentialForm.getUsername(),key, encrypedPassword, userId));
-        return "redirect:/home?tabOption=credentials";
+        return credentialMapper.addCredential(new Credential(null, credentialForm.getUrl(), credentialForm.getUsername(),key, encrypedPassword, userId));
     }
 
     public List<Credential> getAllCredential(int userId) {
         return credentialMapper.getAllCredential(userId);
     }
 
-    public void deleteCredential(int credentialId) {
-        credentialMapper.deleteCredential(credentialId);
+    public int deleteCredential(int credentialId) {
+        return credentialMapper.deleteCredential(credentialId);
     }
 
-    public String updateCredential(CredentialForm credentialForm, int credentialId) {
+    public int updateCredential(CredentialForm credentialForm, int credentialId) {
         //getKey
         String key = credentialMapper.getKey(credentialId);
         String encrypedPassword = encryptionService.encryptValue(credentialForm.getPassword(), key);
-        credentialMapper.updateCredential(credentialId, credentialForm.getUrl(), credentialForm.getUsername(), encrypedPassword);
-        return "redirect:/home?tabOption=credentials";
+        return credentialMapper.updateCredential(credentialId, credentialForm.getUrl(), credentialForm.getUsername(), encrypedPassword);
     }
 }
