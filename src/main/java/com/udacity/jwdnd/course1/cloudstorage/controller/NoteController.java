@@ -29,15 +29,34 @@ public class NoteController {
     public String addNote(NoteForm noteForm, Authentication authentication, Model model, @ModelAttribute(value="noteId") String noteId) {
         int userId = userService.getUser(authentication.getName()).getUserId();
         if (noteId.equals("")) {
-            return noteService.addNote(noteForm, userId, model);
+            if (noteService.addNote(noteForm, userId, model) == 1) {
+                model.addAttribute("success", true);
+                model.addAttribute("tabAfterSuccess", "notes");
+            } else {
+                model.addAttribute("otherError", true);
+                model.addAttribute("tabAfterOtherError", "notes");
+            }
         } else {
-            return noteService.updateNode(noteForm, Integer.valueOf(noteId));
+            if(noteService.updateNode(noteForm, Integer.valueOf(noteId)) == 1){
+                model.addAttribute("success", true);
+                model.addAttribute("tabAfterSuccess", "notes");
+            } else {
+                model.addAttribute("otherError", true);
+                model.addAttribute("tabAfterOtherError", "notes");
+            }
         }
+        return "result";
     }
 
     @RequestMapping(value="/delete/{noteId}")
-    public String deleteNote(@PathVariable int noteId){
-        noteService.deleteNode(noteId);
-        return "redirect:/home?tabOption=notes";
+    public String deleteNote(Model model, @PathVariable int noteId){
+        if (noteService.deleteNode(noteId) == 1) {
+            model.addAttribute("success", true);
+            model.addAttribute("tabAfterSuccess", "notes");
+        } else {
+            model.addAttribute("otherError", true);
+            model.addAttribute("tabAfterOtherError", "notes");
+        }
+        return "result";
     }
 }

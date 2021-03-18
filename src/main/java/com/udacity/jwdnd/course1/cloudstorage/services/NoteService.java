@@ -18,19 +18,17 @@ public class NoteService {
         this.noteMapper = noteMapper;
     }
 
-    public String addNote(NoteForm noteForm, int userId, Model model) {
-        noteMapper.addNote(new Note(null, noteForm.getNoteTitle(), noteForm.getNoteDescription(), userId));
-        return "redirect:/home?tabOption=notes";
+    public int addNote(NoteForm noteForm, int userId, Model model) {
+        return noteMapper.addNote(new Note(null, noteForm.getNoteTitle(), noteForm.getNoteDescription(), userId));
     }
 
     public List<Note> getAllNote(int userId) { return noteMapper.getAllNote(userId);}
 
-    public void deleteNode(int noteId) {
-        noteMapper.deleteNote(noteId);
+    public int deleteNode(int noteId) {
+        return noteMapper.deleteNote(noteId);
     }
 
-    public String updateNode(NoteForm noteForm, int noteId) {
-        noteMapper.updateNote(noteId, noteForm.getNoteTitle(), noteForm.getNoteDescription());
-        return "redirect:/home?tabOption=notes";
+    public int updateNode(NoteForm noteForm, int noteId) {
+        return noteMapper.updateNote(noteId, noteForm.getNoteTitle(), noteForm.getNoteDescription());
     }
 }
