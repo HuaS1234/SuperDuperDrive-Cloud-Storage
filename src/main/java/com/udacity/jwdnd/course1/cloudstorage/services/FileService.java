@@ -1,5 +1,10 @@
 package com.udacity.jwdnd.course1.cloudstorage.services;
 
+import com.udacity.jwdnd.course1.cloudstorage.Constant.CategoryConstants;
+import com.udacity.jwdnd.course1.cloudstorage.Constant.MsgConstants;
+import com.udacity.jwdnd.course1.cloudstorage.Constant.TabConstants;
+import com.udacity.jwdnd.course1.cloudstorage.Exception.FileException;
+import com.udacity.jwdnd.course1.cloudstorage.Exception.NoteException;
 import com.udacity.jwdnd.course1.cloudstorage.mapper.FileMapper;
 import com.udacity.jwdnd.course1.cloudstorage.model.File;
 import org.springframework.http.HttpHeaders;
@@ -13,7 +18,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
-public class FileService implements StorageService{
+public class FileService {
 
     private final FileMapper fileMapper;
 
@@ -21,66 +26,74 @@ public class FileService implements StorageService{
         this.fileMapper = fileMapper;
     }
 
-    @Override
-    public int deleteFile(int fileId) {
-        return fileMapper.deleteFile(fileId);
+    public String deleteFile(int fileId, Model model) {
+        try {
+            //delete a file
+            if (fileMapper.deleteFile(fileId) == 1) {
+                model.addAttribute("success", MsgConstants.getSuccessMsg_delete(CategoryConstants.file));
+                model.addAttribute("tabAfterSuccess", TabConstants.file);
+            } else {
+                throw new FileException(MsgConstants.defaultError);
+            }
+        } catch(FileException fe) {
+            throw fe;
+        } catch(Exception e) {
+            throw new FileException(MsgConstants.defaultError, e);
+        }
+
+        return "result";
     }
 
-    @Override
     public List<File> getAllFile(int userId) {
         return fileMapper.getAllFile(userId);
     }
 
-    @Override
     public int checkFile(int userId, String fileName) {
         return fileMapper.checkFile(userId, fileName);
     }
 
-    @Override
     public ResponseEntity<Resource> viewFile(int fileId) {
-        File file = fileMapper.getFile(fileId);
-        ResponseEntity respEntity = null;
-        String type=file.getContenttype();
-        byte[]out=file.getFiledata();
+        try {
+            File file = fileMapper.getFile(fileId);
+            ResponseEntity respEntity = null;
+            String type = file.getContenttype();
+            byte[] out = file.getFiledata();
 
-        HttpHeaders responseHeaders = new HttpHeaders();
-        responseHeaders.add("content-disposition", "attachment; filename=" + file.getFilename());
-        responseHeaders.add("Content-Type",type);
+            HttpHeaders responseHeaders = new HttpHeaders();
+            responseHeaders.add("content-disposition", "attachment; filename=" + file.getFilename());
+            responseHeaders.add("Content-Type", type);
 
-        respEntity = new ResponseEntity(out, responseHeaders, HttpStatus.OK);
+            respEntity = new ResponseEntity(out, responseHeaders, HttpStatus.OK);
 
-        return respEntity;
+            return respEntity;
+        } catch(Exception e) {
+            throw new FileException(MsgConstants.defaultError, e);
+        }
     }
 
-    @Override
     public String upload(MultipartFile file, int userId, Model model) {
-
         try {
+            //check if user selected a file
             if (!file.isEmpty()) {
-                //checkFile(userId, file.getOriginalFilename());
                 if (checkFile(userId, file.getOriginalFilename()) > 0) {
-                    model.addAttribute("error", "The file has been uploaded already! ");
-                    model.addAttribute("tabAfterError", "files");
+                    throw new FileException(MsgConstants.fileError_duplicate);
                 } else {
                     if (fileMapper.insertFile(new File(null, file.getOriginalFilename(), file.getContentType(), file.getSize(), userId, file.getBytes())) == 1) {
-                        model.addAttribute("success", true);
-                        model.addAttribute("tabAfterSuccess", "files");
+                        model.addAttribute("success", MsgConstants.getSuccessMsg_add(CategoryConstants.file));
+                        model.addAttribute("tabAfterSuccess", TabConstants.file);
                     } else {
-                        model.addAttribute("otherError", true);
-                        model.addAttribute("tabAfterOtherError", "files");
+                        throw new FileException(MsgConstants.defaultError);
                     }
                 }
             } else {
-                model.addAttribute("error", "Choose a file first! ");
-                model.addAttribute("tabAfterError", "files");
+                throw new FileException(MsgConstants.fileError_empty);
             }
+        } catch(FileException fe) {
+            throw fe;
+        } catch(Exception e) {
+            throw new FileException(MsgConstants.defaultError, e);
+        }
 
-            return "result";
-        }
-        catch (Exception e) {
-            model.addAttribute("otherError", "error");
-            model.addAttribute("tabAfterOtherError", "files");
-            return "result";
-        }
+        return "result";
     }
 }

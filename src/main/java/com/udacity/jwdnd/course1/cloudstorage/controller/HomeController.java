@@ -42,6 +42,9 @@ public class HomeController {
         model.addAttribute("credentialList", this.credentialService.getAllCredential(userId));
         model.addAttribute("activeTab", tabOption);
         model.addAttribute("encryptionService",encryptionService);
+        //
+        model.addAttribute("hasErrors",true);
+
         return "home";
     }
 }
